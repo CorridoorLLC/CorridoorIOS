@@ -22,6 +22,8 @@
 		D26B94552A3D6430000A624D /* corridoorAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B94542A3D6430000A624D /* corridoorAppTests.swift */; };
 		D26B945F2A3D6430000A624D /* corridoorAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B945E2A3D6430000A624D /* corridoorAppUITests.swift */; };
 		D26B94612A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B94602A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift */; };
+		D2A3055B2A4817A20012E6A9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D2A3055A2A4817A20012E6A9 /* GoogleSignIn */; };
+		D2A3055D2A4817A20012E6A9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2A3055C2A4817A20012E6A9 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,7 @@
 		D26B945A2A3D6430000A624D /* corridoorAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = corridoorAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26B945E2A3D6430000A624D /* corridoorAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corridoorAppUITests.swift; sourceTree = "<group>"; };
 		D26B94602A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corridoorAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2A3055E2A4818F00012E6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A3055B2A4817A20012E6A9 /* GoogleSignIn in Frameworks */,
 				D242D1D42A46B2D700354C47 /* FirebaseDatabaseSwift in Frameworks */,
 				D242D1D02A46B2D700354C47 /* FirebaseAnalyticsSwift in Frameworks */,
+				D2A3055D2A4817A20012E6A9 /* GoogleSignInSwift in Frameworks */,
 				D242D1D22A46B2D700354C47 /* FirebaseAuth in Frameworks */,
 				D242D1D62A46B2D700354C47 /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -120,6 +125,7 @@
 		D26B94422A3D642F000A624D /* corridoorApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2A3055E2A4818F00012E6A9 /* Info.plist */,
 				D242D1CC2A46B0F500354C47 /* GoogleService-Info.plist */,
 				D26B94432A3D642F000A624D /* corridoorAppApp.swift */,
 				D26B94452A3D642F000A624D /* ContentView.swift */,
@@ -176,6 +182,8 @@
 				D242D1D12A46B2D700354C47 /* FirebaseAuth */,
 				D242D1D32A46B2D700354C47 /* FirebaseDatabaseSwift */,
 				D242D1D52A46B2D700354C47 /* FirebaseFirestoreSwift */,
+				D2A3055A2A4817A20012E6A9 /* GoogleSignIn */,
+				D2A3055C2A4817A20012E6A9 /* GoogleSignInSwift */,
 			);
 			productName = corridoorApp;
 			productReference = D26B94402A3D642F000A624D /* corridoorApp.app */;
@@ -251,6 +259,7 @@
 			mainGroup = D26B94372A3D642F000A624D;
 			packageReferences = (
 				D242D1CE2A46B2D600354C47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D2A305592A4817A20012E6A9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = D26B94412A3D642F000A624D /* Products */;
 			projectDirPath = "";
@@ -461,6 +470,7 @@
 				DEVELOPMENT_TEAM = 8MSX699Z2T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = corridoorApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,6 +500,7 @@
 				DEVELOPMENT_TEAM = 8MSX699Z2T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = corridoorApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -634,6 +645,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		D2A305592A4817A20012E6A9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -656,6 +675,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D242D1CE2A46B2D600354C47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		D2A3055A2A4817A20012E6A9 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2A305592A4817A20012E6A9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		D2A3055C2A4817A20012E6A9 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2A305592A4817A20012E6A9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

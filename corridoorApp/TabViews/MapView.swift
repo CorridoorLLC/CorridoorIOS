@@ -11,24 +11,16 @@ import FirebaseFirestore
 
 struct MapView: View {
     //does not work
+    
     func fetchBuilding() {
-        db.collection("maps").getDocuments() { (querySnapshot, err) in
+        let mapsRef = db.collection("maps")
+        
+        mapsRef.getDocuments() { (querySnapshot, err) in
             if let err = err {
-                print("Error getting maps documents: \(err)")
+                print("Error getting documents: \(err)")
             } else {
-                for org in querySnapshot!.documents {
-                    let orgRef = db.collection("maps").document(org.documentID).collection("buildings")
-                    orgRef.getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            print("Error getting buildings documents: \(err)")
-                        } else {
-                            for building in querySnapshot!.documents {
-                                if let buildingName = building.data()["buildingName"] as? String {
-                                    print(buildingName)
-                                }
-                            }
-                        }
-                    }
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID)")
                 }
             }
         }
