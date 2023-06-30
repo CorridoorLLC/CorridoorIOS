@@ -21,7 +21,6 @@ struct ContentView: View {
                     .tabItem(){
                         Image(systemName: "map.fill")
                         Text("Explore")
-                        
                     }
                 SavedView()
                     .tabItem(){
