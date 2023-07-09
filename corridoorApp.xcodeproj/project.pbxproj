@@ -24,6 +24,12 @@
 		D26B94612A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B94602A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift */; };
 		D2A3055B2A4817A20012E6A9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D2A3055A2A4817A20012E6A9 /* GoogleSignIn */; };
 		D2A3055D2A4817A20012E6A9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2A3055C2A4817A20012E6A9 /* GoogleSignInSwift */; };
+		D2A9E6682A5A8AE2008F0DFD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9E6672A5A8AE2008F0DFD /* LoginViewModel.swift */; };
+		D2A9E66A2A5A8AF2008F0DFD /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9E6692A5A8AF2008F0DFD /* MapViewModel.swift */; };
+		D2A9E66C2A5A8B00008F0DFD /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9E66B2A5A8B00008F0DFD /* SavedViewModel.swift */; };
+		D2B4E4E22A57C9450093546C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4E4E12A57C9450093546C /* AppDelegate.swift */; };
+		D2B4E4E42A57C97A0093546C /* GIDConfigurationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4E4E32A57C97A0093546C /* GIDConfigurationExtensions.swift */; };
+		D2B4E4E62A57C98A0093546C /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4E4E52A57C98A0093546C /* UIApplicationExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		D26B945E2A3D6430000A624D /* corridoorAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corridoorAppUITests.swift; sourceTree = "<group>"; };
 		D26B94602A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corridoorAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2A3055E2A4818F00012E6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D2A9E6672A5A8AE2008F0DFD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D2A9E6692A5A8AF2008F0DFD /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D2A9E66B2A5A8B00008F0DFD /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
+		D2B4E4E12A57C9450093546C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2B4E4E32A57C97A0093546C /* GIDConfigurationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIDConfigurationExtensions.swift; sourceTree = "<group>"; };
+		D2B4E4E52A57C98A0093546C /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +107,9 @@
 		D242D1A92A46988700354C47 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
-				D242D1A72A46969600354C47 /* LoginView.swift */,
-				D242D1AA2A4698CC00354C47 /* MapView.swift */,
-				D242D1AC2A4698E600354C47 /* SavedView.swift */,
+				D2A9E6642A5A8AA9008F0DFD /* LoginView */,
+				D2A9E6652A5A8AC3008F0DFD /* MapView */,
+				D2A9E6662A5A8ACF008F0DFD /* SavedView */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -129,6 +141,7 @@
 				D242D1CC2A46B0F500354C47 /* GoogleService-Info.plist */,
 				D26B94432A3D642F000A624D /* corridoorAppApp.swift */,
 				D26B94452A3D642F000A624D /* ContentView.swift */,
+				D2B4E4E02A57C9140093546C /* Firebase */,
 				D242D1A92A46988700354C47 /* TabViews */,
 				D26B94472A3D6430000A624D /* Assets.xcassets */,
 				D26B94492A3D6430000A624D /* Preview Content */,
@@ -159,6 +172,43 @@
 				D26B94602A3D6430000A624D /* corridoorAppUITestsLaunchTests.swift */,
 			);
 			path = corridoorAppUITests;
+			sourceTree = "<group>";
+		};
+		D2A9E6642A5A8AA9008F0DFD /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				D2A9E6672A5A8AE2008F0DFD /* LoginViewModel.swift */,
+				D242D1A72A46969600354C47 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		D2A9E6652A5A8AC3008F0DFD /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				D242D1AA2A4698CC00354C47 /* MapView.swift */,
+				D2A9E6692A5A8AF2008F0DFD /* MapViewModel.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		D2A9E6662A5A8ACF008F0DFD /* SavedView */ = {
+			isa = PBXGroup;
+			children = (
+				D242D1AC2A4698E600354C47 /* SavedView.swift */,
+				D2A9E66B2A5A8B00008F0DFD /* SavedViewModel.swift */,
+			);
+			path = SavedView;
+			sourceTree = "<group>";
+		};
+		D2B4E4E02A57C9140093546C /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				D2B4E4E12A57C9450093546C /* AppDelegate.swift */,
+				D2B4E4E32A57C97A0093546C /* GIDConfigurationExtensions.swift */,
+				D2B4E4E52A57C98A0093546C /* UIApplicationExtensions.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,11 +354,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B4E4E22A57C9450093546C /* AppDelegate.swift in Sources */,
+				D2A9E66A2A5A8AF2008F0DFD /* MapViewModel.swift in Sources */,
 				D242D1A82A46969600354C47 /* LoginView.swift in Sources */,
+				D2B4E4E62A57C98A0093546C /* UIApplicationExtensions.swift in Sources */,
+				D2B4E4E42A57C97A0093546C /* GIDConfigurationExtensions.swift in Sources */,
+				D2A9E66C2A5A8B00008F0DFD /* SavedViewModel.swift in Sources */,
 				D242D1AD2A4698E600354C47 /* SavedView.swift in Sources */,
 				D242D1AB2A4698CC00354C47 /* MapView.swift in Sources */,
 				D26B94462A3D642F000A624D /* ContentView.swift in Sources */,
 				D26B94442A3D642F000A624D /* corridoorAppApp.swift in Sources */,
+				D2A9E6682A5A8AE2008F0DFD /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

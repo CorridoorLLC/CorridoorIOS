@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
-    func googleSignInHandler(){
-        print("Attempting to sign in")
-    }
+    @StateObject private var viewModel = LoginViewModel()
     var body: some View {
         VStack{
             Text("This is where you can login in case you need to access private maps, etc.")
-            Button(action: googleSignInHandler){
+            Button(action: viewModel.signIn){
                 Text ("Sign in with Google")
                 .frame (maxWidth: . infinity)
                 .padding (.vertical, 8)
