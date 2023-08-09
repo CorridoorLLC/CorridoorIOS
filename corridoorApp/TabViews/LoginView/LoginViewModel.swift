@@ -18,9 +18,22 @@ class UIHelper {
 
 final class LoginViewModel: ObservableObject {
     @Published var isUserLoggedIn = false
+    @Published var displayName: String? = nil
 
     init(){
             self.isUserLoggedIn = UserDefaults.standard.bool(forKey: "signIn")
+            self.displayName = UserDefaults.standard.string(forKey: "displayName")
+    }
+    func signOut() {
+            do {
+                try Auth.auth().signOut()
+                UserDefaults.standard.set(false, forKey: "signIn")
+                UserDefaults.standard.removeObject(forKey: "displayName")
+                self.isUserLoggedIn = false
+                self.displayName = nil
+            } catch let error {
+                print("Error signing out: \(error)")
+            }
     }
     func signIn(){
         print("attempting to sign in using GID")
@@ -52,8 +65,11 @@ final class LoginViewModel: ObservableObject {
                 }
                 print("SIGN IN")
                 UserDefaults.standard.set(true, forKey: "signIn")
-                self.isUserLoggedIn = true // This will cause the view to update
+                UserDefaults.standard.set(result?.user.displayName, forKey: "displayName")
+                self.isUserLoggedIn = true
+                self.displayName = result?.user.displayName // Assuming displayName is available here
             }
+            
         }
     }
 }

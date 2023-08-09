@@ -1,37 +1,44 @@
-//
-//  ContentView.swift
-//  corridoorApp
-//
-//  Created by Dev Kunjadia on 6/16/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    @State var conditional = true
-    @ObservedObject var viewModel = LoginViewModel() //how you import an object
+    @StateObject var viewModel = LoginViewModel()
+    @State private var selection = 0
+
     var body: some View {
         ZStack {
-            LinearGradient (gradient: Gradient (colors: [.purple, .pink])
-                            , startPoint: .top,
-                            endPoint: .bottomLeading)
+            LinearGradient(gradient: Gradient(colors: [.purple, .pink]), startPoint: .top, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
-            TabView{
+            TabView(selection: $selection) {
                 MapView()
-                    .tabItem(){
+                    .tabItem {
                         Image(systemName: "map.fill")
                         Text("Explore")
                     }
                 SavedView()
-                    .tabItem(){
+                    .tabItem {
                         Image(systemName: "bookmark.fill")
                         Text("Find Again")
                     }
-                LoginView()
-                    .tabItem(){
-                        Image(systemName: "person.fill")
-                        Text("Login")
-                    }
+                if viewModel.isUserLoggedIn {
+                    UserProfileView(displayName: viewModel.displayName, signOutAction: viewModel.signOut)
+                        .tabItem {
+                            Image(systemName: "person.fill")
+                            Text("Profile")
+                        }
+                        .tag(2)
+                } else {
+                    LoginView(viewModel: viewModel)
+                        .tabItem {
+                            Image(systemName: "person.fill")
+                            Text("Login")
+                        }
+                        .tag(2)
+                }
+            }
+            .onChange(of: viewModel.isUserLoggedIn) { newValue in
+                if newValue {
+                    selection = 2 // Switch to Profile tab on successful login
+                }
             }
         }
     }
