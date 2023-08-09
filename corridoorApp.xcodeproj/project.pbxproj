@@ -15,6 +15,7 @@
 		D242D1D22A46B2D700354C47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D242D1D12A46B2D700354C47 /* FirebaseAuth */; };
 		D242D1D42A46B2D700354C47 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D242D1D32A46B2D700354C47 /* FirebaseDatabaseSwift */; };
 		D242D1D62A46B2D700354C47 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D242D1D52A46B2D700354C47 /* FirebaseFirestoreSwift */; };
+		D247B5A02A83D98D0003C7D9 /* +view.swift in Sources */ = {isa = PBXBuildFile; fileRef = D247B59F2A83D98D0003C7D9 /* +view.swift */; };
 		D26B94442A3D642F000A624D /* corridoorAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B94432A3D642F000A624D /* corridoorAppApp.swift */; };
 		D26B94462A3D642F000A624D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26B94452A3D642F000A624D /* ContentView.swift */; };
 		D26B94482A3D6430000A624D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26B94472A3D6430000A624D /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		D242D1AA2A4698CC00354C47 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D242D1AC2A4698E600354C47 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		D242D1CC2A46B0F500354C47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "corridoorApp/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D247B59F2A83D98D0003C7D9 /* +view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+view.swift"; sourceTree = "<group>"; };
 		D26B94402A3D642F000A624D /* corridoorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = corridoorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26B94432A3D642F000A624D /* corridoorAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corridoorAppApp.swift; sourceTree = "<group>"; };
 		D26B94452A3D642F000A624D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				D2A9E6672A5A8AE2008F0DFD /* LoginViewModel.swift */,
 				D242D1A72A46969600354C47 /* LoginView.swift */,
+				D247B59F2A83D98D0003C7D9 /* +view.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D247B5A02A83D98D0003C7D9 /* +view.swift in Sources */,
 				D2B4E4E22A57C9450093546C /* AppDelegate.swift in Sources */,
 				D2A9E66A2A5A8AF2008F0DFD /* MapViewModel.swift in Sources */,
 				D242D1A82A46969600354C47 /* LoginView.swift in Sources */,

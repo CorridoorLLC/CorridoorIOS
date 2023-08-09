@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var conditional = true
+    @ObservedObject var viewModel = LoginViewModel() //how you import an object
     var body: some View {
-        //seeting the background gradient
         ZStack {
             LinearGradient (gradient: Gradient (colors: [.purple, .pink])
                             , startPoint: .top,

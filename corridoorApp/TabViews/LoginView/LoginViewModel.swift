@@ -18,6 +18,10 @@ class UIHelper {
 
 final class LoginViewModel: ObservableObject {
     @Published var isUserLoggedIn = false
+
+    init(){
+            self.isUserLoggedIn = UserDefaults.standard.bool(forKey: "signIn")
+    }
     func signIn(){
         print("attempting to sign in using GID")
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -41,7 +45,15 @@ final class LoginViewModel: ObservableObject {
           let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                          accessToken: user.accessToken.tokenString)
 
-          // ...
+            Auth.auth().signIn(with: credential) { result, error in
+                guard error == nil else {
+                    print("ERROR")
+                    return
+                }
+                print("SIGN IN")
+                UserDefaults.standard.set(true, forKey: "signIn")
+                self.isUserLoggedIn = true // This will cause the view to update
+            }
         }
     }
 }
